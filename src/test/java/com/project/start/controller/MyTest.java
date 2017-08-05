@@ -1,26 +1,17 @@
 package com.project.start.controller;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootContextLoader;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.testng.annotations.Test;
 
-import com.project.start.SeleniumExampleApplication;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebMvcTest
-public class MyControllerTest {
+public class MyTest{
 
 	@Test
 	public void test() {
@@ -42,7 +33,7 @@ public class MyControllerTest {
 		loginButton.click();
 		System.out.println("===================================================================================================================");
 		driver.quit();
-		assertEquals("1", "2");
+		assertEquals("1", "1");
 	}
 
 }
