@@ -1,6 +1,5 @@
 package com.project.start.controller;
 
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -24,28 +23,27 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 
 import com.project.start.SeleniumExampleApplication;
 
-@SpringBootTest(classes = {SeleniumExampleApplication.class})
+@SpringBootTest(classes = { SeleniumExampleApplication.class })
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= {SeleniumExampleApplication.class})
-@WebIntegrationTest("server.port:0")    
-
+@ContextConfiguration(classes = { SeleniumExampleApplication.class })
 public class MyTest {
 
-	
-	  @Autowired
-	    EmbeddedWebApplicationContext server;
+	@Autowired
+	EmbeddedWebApplicationContext server;
 
-	    @Value("${local.server.port}")
-	    int port;    
+	@Value("${local.server.port}")
+	int port;
 
 	@Test
 	public void test() {
-//		System.out.println("Environment port: ===>>>> "+environment.getProperty("local.server.port"));
+
+		// System.out.println("Environment port: ===>>>>
+		// "+environment.getProperty("local.server.port"));
 		HtmlUnitDriver driver = new HtmlUnitDriver(true);
 		driver.get("http://localhost:8089/test");
 		WebDriverWait wait = new WebDriverWait(driver, 3000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("username"))));
-		System.out.println("Driverrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr: "+driver.getTitle());
+		System.out.println("Driverrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr: " + driver.getTitle());
 		WebElement usernameInput = driver.findElement(By.id("username"));
 
 		usernameInput.sendKeys("test-user");
@@ -57,9 +55,10 @@ public class MyTest {
 		WebElement loginButton = driver.findElement(By.id("login"));
 
 		loginButton.click();
-		System.out.println("===================================================================================================================");
+		System.out.println(
+				"===================================================================================================================");
 		driver.quit();
-//		System.out.println("Server port: "+randomServerPort);
+		// System.out.println("Server port: "+randomServerPort);
 		assertEquals("1", "1");
 	}
 
