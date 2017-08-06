@@ -28,11 +28,11 @@ import com.project.start.SeleniumExampleApplication;
 @ContextConfiguration(classes = { SeleniumExampleApplication.class })
 public class MyTest {
 
-	@Autowired
-	EmbeddedWebApplicationContext server;
-
-	@Value("${local.server.port}")
-	int port;
+//	@Autowired
+//	EmbeddedWebApplicationContext server;
+//
+//	@Value("${local.server.port}")
+//	int port;
 
 	@Test
 	public void test() {
